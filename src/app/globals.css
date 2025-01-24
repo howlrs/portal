@@ -35,6 +35,16 @@ a {
   text-decoration: none;
 }
 
+main {
+  text-align: left;
+  padding: 2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

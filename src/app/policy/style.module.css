@@ -1,0 +1,18 @@
+.content {
+    padding: 0 2rem;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.content dl {
+    padding-top: 2rem;
+}
+
+.content dt {
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.content dd {
+    padding-left: 2rem;
+}

@@ -3,8 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
-import { Flex, Space, Typography } from 'antd';
+import { Flex, Typography } from 'antd';
 
 const blogDirectory = path.join(process.cwd(), 'articles');
 
@@ -14,35 +13,25 @@ type PostMeta = {
     date: string;
 };
 
-// ブログ記事のProps型を定義
-type BlogPostProps = {
-    slug: string;
-    title: string;
-    date: string;
-    contentHtml: string;
-};
-
-// Next.js の getStaticPaths で利用する params の型を定義
-type BlogParams = {
-    slug: string;
-}
-
-
 export async function generateStaticParams() {
     console.log(blogDirectory);
 
     const fileNames = fs.readdirSync(blogDirectory);
 
-
-
     return fileNames.map((fileName) => {
         const slug = fileName.replace(/\.md$/, '');
-        return { slug };
+        return {
+            params: {
+                slug: slug,
+            }
+        };
     });
 };
 
+type Props = Promise<{ slug: string; }>
 
-const BlogPost = async ({ params }: { params: { slug: string } }) => {
+
+const BlogPost = async ({ params }: { params: Props }) => {
     const { slug } = await params;
     const filePath = path.join(blogDirectory, `${slug}.md`);
     const fileContent = fs.readFileSync(filePath, 'utf-8');

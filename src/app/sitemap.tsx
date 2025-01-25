@@ -2,12 +2,6 @@ import { MetadataRoute } from 'next';
 import fs from 'fs';
 import path from 'path';
 
-// ブログ記事のメタデータ型を定義
-type PostMeta = {
-    title: string;
-    date: string;
-};
-
 const blogDirectory = path.join(process.cwd(), 'articles');
 // ブログ記事のURLを生成する関数
 async function getBlogPostsUrls() {
@@ -23,7 +17,6 @@ async function getBlogPostsUrls() {
     });
     return urls;
 }
-
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const blogPostsUrls = await getBlogPostsUrls();

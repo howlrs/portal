@@ -34,6 +34,13 @@ export const ProductsList = () => {
             icon_url: 'https://github.com/howlrs/gen-readme/blob/master/src-tauri/icons/128x128.png?raw=true',
             description: 'ディレクトリパスを渡すとディレクトリ内以下ファイルを走査し、リスト化、GEMINI AIにドキュメント化を依頼し、結果をディレクトリ内に保存します。'
         },
+        {
+            name: 'Excel to CSV',
+            url: 'https://github.com/howlrs/excel-to-csv/releases',
+            image_url: readme.src,
+            icon_url: 'https://github.com/howlrs/excel-to-csv/blob/master/src-tauri/icons/128x128.png?raw=true',
+            description: 'Excelファイルを解析してCSV形式のデータに変換するツールを提供することを目的としています。具体的には、ユーザーがExcelファイルをアプリケーションにドロップすることで、その内容を解析し、CSV形式のテキストデータとして取得できるようにします。'
+        },
     ];
 
 

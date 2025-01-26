@@ -3,6 +3,7 @@ import prime from '../../public/images/prime.png';
 import xauto from '../../public/images/xauto.png';
 import reader from '../../public/images/reader.png';
 import readme from '../../public/images/readme.png';
+import excelto from '../../public/images/excel-to.png';
 
 export const ProductsList = () => {
     const items: Item[] = [
@@ -37,7 +38,7 @@ export const ProductsList = () => {
         {
             name: 'Excel to CSV',
             url: 'https://github.com/howlrs/excel-to-csv/releases',
-            image_url: readme.src,
+            image_url: excelto.src,
             icon_url: 'https://github.com/howlrs/excel-to-csv/blob/master/src-tauri/icons/128x128.png?raw=true',
             description: 'Excelファイルを解析してCSV形式のデータに変換するツールを提供することを目的としています。具体的には、ユーザーがExcelファイルをアプリケーションにドロップすることで、その内容を解析し、CSV形式のテキストデータとして取得できるようにします。'
         },

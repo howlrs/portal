@@ -1,4 +1,5 @@
 import { Products, Item } from '../../common/products';
+import lotus from '../../public/images/lotus.png';
 import prime from '../../public/images/prime.png';
 import xauto from '../../public/images/xauto.png';
 import reader from '../../public/images/reader.png';
@@ -7,6 +8,13 @@ import excelto from '../../public/images/excel-to.png';
 
 export const ProductsList = () => {
     const items: Item[] = [
+        {
+            name: 'レンコンシェフ/Lotus root Chef',
+            url: 'https://github.com/howlrs/lotus-root-chef',
+            image_url: lotus.src,
+            icon_url: 'https://github.com/howlrs/lotus-root-chef/blob/master/src-tauri/icons/128x128@2x.png?raw=true',
+            description: 'レンコンシェフは、指定価格帯の指定枚数の板に対して、追従しながら指値を行います。'
+        },
         {
             name: '[GeminiAI生成] 講義と漫才で学ぶ算数数学',
             url: 'https://prime.howlrs.net/',

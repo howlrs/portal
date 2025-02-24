@@ -1,4 +1,5 @@
 import { Products, Item } from '../../common/products';
+import view5ch from '../../public/images/view5ch.png';
 import lotus from '../../public/images/lotus.png';
 import prime from '../../public/images/prime.png';
 import xauto from '../../public/images/xauto.png';
@@ -8,6 +9,13 @@ import excelto from '../../public/images/excel-to.png';
 
 export const ProductsList = () => {
     const items: Item[] = [
+        {
+            name: '2ch/5ch/other View and saver',
+            url: 'https://github.com/howlrs/view5ch',
+            image_url: view5ch.src,
+            icon_url: 'https://github.com/howlrs/view5ch/blob/master/src-tauri/icons/128x128@2x.png?raw=true',
+            description: '対象ウェブサイト・ページ情報を簡単に取得し、必要に応じて任意対象項目をリストアップし、保存するためのOSクロスプラットフォーム用デスクトップアプリです。'
+        },
         {
             name: 'レンコンシェフ/Lotus root Chef',
             url: 'https://github.com/howlrs/lotus-root-chef',

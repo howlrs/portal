@@ -3,6 +3,10 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
+import remarkYoutube from 'remark-youtube';
 import { Flex, Typography } from 'antd';
 
 const blogDirectory = path.join(process.cwd(), 'articles');
@@ -41,6 +45,10 @@ const BlogPost = async ({ params }: { params: Props }) => {
 
     const processedContent = await remark()
         .use(html)
+        .use(remarkParse)
+        .use(remarkYoutube)
+        .use(remarkRehype)
+        .use(rehypeStringify)
         .process(matterResult.content);
     const contentHtml = processedContent.toString();
 

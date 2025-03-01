@@ -1,4 +1,5 @@
 import { Products, Item } from '../../common/products';
+import voicevox from '../../public/images/slide-voicevox.png';
 import view5ch from '../../public/images/view5ch.png';
 import lotus from '../../public/images/lotus.png';
 import prime from '../../public/images/prime.png';
@@ -9,6 +10,13 @@ import excelto from '../../public/images/excel-to.png';
 
 export const ProductsList = () => {
     const items: Item[] = [
+        {
+            name: 'Rust x Voicevoxブログラマブル動画生成',
+            url: 'https://github.com/howlrs/slide_with_voice',
+            image_url: voicevox.src,
+            icon_url: 'https://github.com/howlrs/slide_with_voice/blob/release/images/icon.png?raw=true',
+            description: 'テキストファイルから動画を生成します。プログラマブルなテンプレートライクな動画をすばやく生成できます。特にプレゼンテーションやサービス紹介などに有用です。'
+        },
         {
             name: '2ch/5ch/other View and saver',
             url: 'https://github.com/howlrs/view5ch',

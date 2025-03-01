@@ -26,6 +26,16 @@ async function getPosts() {
             date: postMeta.date
         };
     });
+
+    // sorted by date
+    posts.sort((a, b) => {
+        if (a.date < b.date) {
+            return 1;
+        } else {
+            return -1;
+        }
+    });
+
     return posts;
 }
 

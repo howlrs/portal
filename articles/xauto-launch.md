@@ -1,6 +1,6 @@
 ---
 title: '自動投稿マネージャー: Twitter/X LONG POST AUTO WITH SCHEDULER のご紹介'
-date: '2024-01-19'
+date: '2025-01-19'
 ---
 ## もうSNS投稿に時間と手間を浪費しない！ ツイートを「未来予約」して、あなたの影響力を最大化する魔法
 

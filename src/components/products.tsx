@@ -1,4 +1,5 @@
 import { Products, Item } from '../../common/products';
+import deguchikai from '../../public/images/deguchikai.png';
 import voicevox from '../../public/images/slide-voicevox.png';
 import view5ch from '../../public/images/view5ch.png';
 import lotus from '../../public/images/lotus.png';
@@ -10,6 +11,13 @@ import excelto from '../../public/images/excel-to.png';
 
 export const ProductsList = () => {
     const items: Item[] = [
+        {
+            name: '自動字幕・音声・動画生成デスクトップアプリ DEGUCHIKAI',
+            url: 'https://github.com/howlrs/deguchikai',
+            image_url: deguchikai.src,
+            icon_url: 'https://github.com/howlrs/deguchikai/blob/master/src-tauri/icons/128x128@2x.png?raw=true',
+            description: 'スライド（画像とテキスト）から音声を合成し、動画を自動生成するデスクトップアプリです。従来のコマンド型アプリよりより直感的なインターフェースを実装しました。'
+        },
         {
             name: 'Rust x Voicevoxブログラマブル動画生成',
             url: 'https://github.com/howlrs/slide_with_voice',

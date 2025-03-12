@@ -1,4 +1,5 @@
 import { Products, Item } from '../../common/products';
+import jlpt from '../../public/images/jlpt.png';
 import deguchikai from '../../public/images/deguchikai.png';
 import voicevox from '../../public/images/slide-voicevox.png';
 import view5ch from '../../public/images/view5ch.png';
@@ -11,6 +12,13 @@ import excelto from '../../public/images/excel-to.png';
 
 export const ProductsList = () => {
     const items: Item[] = [
+        {
+            name: 'JLPT [非公式] 日本語能力試験対策学習アプリ',
+            url: 'https://jlpt.howlrs.net/',
+            image_url: jlpt.src,
+            icon_url: 'https://jlpt.howlrs.net/icon.ico',
+            description: 'JLPT [非公式] 日本語能力試験対策学習アプリは、日本語能力試験対策学習アプリです。20000問以上の問題を収録しており、日本語能力試験対策に最適です。'
+        },
         {
             name: '自動字幕・音声・動画生成デスクトップアプリ DEGUCHIKAI',
             url: 'https://github.com/howlrs/deguchikai',

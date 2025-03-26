@@ -1,4 +1,5 @@
 import { Products, Item } from '../../common/products';
+import factorizer from '../../public/images/factorizer.png';
 import jlpt from '../../public/images/jlpt.png';
 import deguchikai from '../../public/images/deguchikai.png';
 import voicevox from '../../public/images/slide-voicevox.png';
@@ -12,6 +13,13 @@ import excelto from '../../public/images/excel-to.png';
 
 export const ProductsList = () => {
     const items: Item[] = [
+        {
+            name: 'TODOアプリ AI Task Factorizer | タスク分解AI',
+            url: 'https://github.com/howlrs/ai_task_factorizer',
+            image_url: factorizer.src,
+            icon_url: 'https://github.com/howlrs/ai_task_factorizer/blob/master/src-tauri/icons/128x128.png?raw=true',
+            description: '現状を表すリソースを渡すとTodoを立ち上げ、各イシューに分類します。 現状を表すリソースは先方からのメールやドキュメント、問題提起文などを想定しています。'
+        },
         {
             name: 'JLPT [非公式] 日本語能力試験対策学習アプリ',
             url: 'https://jlpt.howlrs.net/',

@@ -1,4 +1,5 @@
 import { Products, Item } from '../../common/products';
+import n_delete from '../../public/images/n_delete.png';
 import factorizer from '../../public/images/factorizer.png';
 import jlpt from '../../public/images/jlpt.png';
 import deguchikai from '../../public/images/deguchikai.png';
@@ -13,6 +14,13 @@ import excelto from '../../public/images/excel-to.png';
 
 export const ProductsList = () => {
     const items: Item[] = [
+        {
+            name: 'N Delete｜エヌデリ',
+            url: 'https://github.com/howlrs/ai_task_factorizer',
+            image_url: n_delete.src,
+            icon_url: 'https://github.com/howlrs/ndelete_rs/blob/master/src-tauri/icons/128x128.png?raw=true',
+            description: '対象ファイルを入力するとファイル複数回上書きし削除します。複数回は設定可能で、デフォルトは3回です。削除に成功すると削除証明書として削除ファイル名と削除内容を記載したテキストファイルを出力します。'
+        },
         {
             name: 'TODOアプリ AI Task Factorizer | タスク分解AI',
             url: 'https://github.com/howlrs/ai_task_factorizer',

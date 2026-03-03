@@ -17,9 +17,8 @@ export const Products = ({ items }: { items: Item[] }) => {
     return (
         <Row gutter={[16, 16]} wrap>
             {items.map((item: Item, i: number) => (
-                <Col span={8} xs={24} sm={12} md={12} lg={8}>
+                <Col key={i} span={8} xs={24} sm={12} md={12} lg={8}>
                     <Card
-                        key={i}
                         style={{ width: '20wv' }}
                         cover={
                             <img

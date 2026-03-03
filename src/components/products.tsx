@@ -11,9 +11,25 @@ import xauto from '../../public/images/xauto.png';
 import reader from '../../public/images/reader.png';
 import readme from '../../public/images/readme.png';
 import excelto from '../../public/images/excel-to.png';
+import orbitbola from '../../public/images/orbit-bola.png';
+import antoki from '../../public/images/mbti.png';
 
 export const ProductsList = () => {
     const items: Item[] = [
+        {
+            name: 'Orbit Bola!! | 宇宙状況認識API',
+            url: 'https://orbit-bola.com/',
+            image_url: orbitbola.src,
+            icon_url: 'https://orbit-bola.com/favicon.ico',
+            description: '衛星オペレーター・研究者向けの宇宙状況認識(SSA)プラットフォームです。TLE/OMM軌道データの正規化、AI衝突警告トリアージ、宇宙保険リスク評価などをREST APIで提供します。'
+        },
+        {
+            name: 'ANTOKI | MBTI地域マッチング掲示板',
+            url: 'https://mbti.antoki.net/',
+            image_url: antoki.src,
+            icon_url: 'https://mbti.antoki.net/favicon.ico',
+            description: 'MBTI性格診断をベースにした地域掲示板マッチングサービスです。匿名で利用でき、性格タイプの相性から純粋なつながりを生み出します。'
+        },
         {
             name: 'N Delete｜エヌデリ',
             url: 'https://github.com/howlrs/ai_task_factorizer',

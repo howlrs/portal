@@ -34,19 +34,17 @@ export default function Page() {
 
                                 <dt>サービスの対価:</dt>
                                 <dd>
-                                    <dt>
+                                    <p>
                                         <Link href={setEnvValue(process.env.NEXT_PUBLIC_XAUTO_URL)} title={setEnvValue(process.env.NEXT_PUBLIC_XAUTO_DESCRIPTION)}>
-                                            {setEnvValue(process.env.NEXT_PUBLIC_XAUTO_TITLE)}
+                                            <strong>{setEnvValue(process.env.NEXT_PUBLIC_XAUTO_TITLE)}</strong>
                                         </Link>
-                                    </dt>
-                                    <dd>
-                                        <ul>
-                                            <li>基本サービス: 無料</li>
-                                            <li>販売価格: 機能解放 {setEnvValue(process.env.NEXT_PUBLIC_XAUTO_LOWPRICE)}</li>
-                                            <li>販売価格: 設定代行 {setEnvValue(process.env.NEXT_PUBLIC_XAUTO_HIGHPRICE)}</li>
-                                            <li>その他料金が発生する場合は、各サービスの購入画面にて明示します。</li>
-                                        </ul>
-                                    </dd>
+                                    </p>
+                                    <ul>
+                                        <li>基本サービス: 無料</li>
+                                        <li>販売価格: 機能解放 {setEnvValue(process.env.NEXT_PUBLIC_XAUTO_LOWPRICE)}</li>
+                                        <li>販売価格: 設定代行 {setEnvValue(process.env.NEXT_PUBLIC_XAUTO_HIGHPRICE)}</li>
+                                        <li>その他料金が発生する場合は、各サービスの購入画面にて明示します。</li>
+                                    </ul>
                                 </dd>
 
                                 <dt>追加手数料:</dt>

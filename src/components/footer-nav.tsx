@@ -1,3 +1,5 @@
+'use client';
+
 import { Descriptions } from 'antd';
 import type { DescriptionsProps } from 'antd';
 import { emailDisplay } from '../../common/strconv';

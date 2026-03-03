@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ConfigProvider, theme } from "antd";
 import "./globals.css";
 import HeaderNav from "@/components/header-nav";
 import FooterNav from "@/components/footer-nav";
+import AntdDarkProvider from "@/components/antd-dark-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,14 +29,16 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <HeaderNav />
-        <main id="main" className="main">
-          {children}
-        </main>
+        <AntdDarkProvider>
+          <HeaderNav />
+          <main id="main" className="main">
+            {children}
+          </main>
 
-        <footer id="footer" className="footer">
-          <FooterNav />
-        </footer>
+          <footer id="footer" className="footer">
+            <FooterNav />
+          </footer>
+        </AntdDarkProvider>
       </body>
     </html>
   );

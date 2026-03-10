@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -34,6 +35,18 @@ export async function generateStaticParams() {
 
 type Props = Promise<{ slug: string; }>
 
+export async function generateMetadata({ params }: { params: Props }): Promise<Metadata> {
+    const { slug } = await params;
+    const filePath = path.join(blogDirectory, `${slug}.md`);
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    const matterResult = matter(fileContent);
+    const postMeta = matterResult.data as PostMeta;
+    return {
+        title: postMeta.title,
+        description: `${postMeta.title} - ${postMeta.date}公開の記事`,
+        alternates: { canonical: `/articles/${slug}` },
+    };
+}
 
 const BlogPost = async ({ params }: { params: Props }) => {
     const { slug } = await params;

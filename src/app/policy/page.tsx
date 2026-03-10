@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import { Col, Row, Tabs } from "antd";
 import { emailDisplay, setEnvValue } from "../../../common/strconv";
 import style from './style.module.css';
 import Link from "next/link";
 import type { TabsProps } from 'antd';
+
+export const metadata: Metadata = {
+    title: "特定商取引法に基づく表記・利用規約",
+    description: "特定商取引法に基づく表記および利用規約・プライバシーポリシーを掲載しています。",
+    alternates: { canonical: "/policy" },
+};
 
 export default function Page() {
     const items: TabsProps['items'] = [

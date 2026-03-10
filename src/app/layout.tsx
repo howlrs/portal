@@ -16,9 +16,47 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://product.howlrs.net";
+const siteTitle = process.env.NEXT_PUBLIC_SITE_TITLE || "howlrs.net Products";
+const siteDescription = `${siteTitle} - howlrs.netで公開されているプロダクトを紹介しています。`;
+
 export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_SITE_TITLE,
-  description: process.env.NEXT_PUBLIC_SITE_TITLE + "です。howlrs.netで公開されているプロダクトを紹介しています。",
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: siteTitle,
+    template: `%s | ${siteTitle}`,
+  },
+  description: siteDescription,
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    url: baseUrl,
+    siteName: siteTitle,
+    title: siteTitle,
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  alternates: {
+    canonical: "/",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteTitle,
+  url: baseUrl,
+  description: siteDescription,
+  inLanguage: "ja",
+  publisher: {
+    "@type": "Organization",
+    name: "howlrs.net",
+    url: "https://howlrs.net",
+  },
 };
 
 export default function RootLayout({
@@ -28,6 +66,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AntdDarkProvider>
           <HeaderNav />

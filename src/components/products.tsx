@@ -13,6 +13,8 @@ import readme from '../../public/images/readme.png';
 import excelto from '../../public/images/excel-to.png';
 import orbitbola from '../../public/images/orbit-bola.png';
 import antoki from '../../public/images/mbti.png';
+import storesqr from '../../public/images/stores-qr.png';
+import lottery from '../../public/images/lottery.png';
 
 export const ProductsList = () => {
     const items: Item[] = [
@@ -29,6 +31,20 @@ export const ProductsList = () => {
             image_url: antoki.src,
             icon_url: 'https://mbti.antoki.net/favicon.ico',
             description: 'MBTI性格診断をベースにした地域掲示板マッチングサービスです。匿名で利用でき、性格タイプの相性から純粋なつながりを生み出します。'
+        },
+        {
+            name: 'QRで管理 | 店舗管理QRソリューション',
+            url: 'https://stores-qr.howlrs.net/',
+            image_url: storesqr.src,
+            icon_url: 'https://stores-qr.howlrs.net/favicon.ico',
+            description: 'QRコードを活用した店舗管理ソリューションです。商品管理（複数バリエーション・在庫・価格設定）、注文管理（試着・購入リクエスト）、QRコード経由のモバイル商品閲覧など、店舗運営を効率化します。'
+        },
+        {
+            name: 'Lottery | 抽選ルーレットシステム',
+            url: 'https://lottery.howlrs.net/',
+            image_url: lottery.src,
+            icon_url: 'https://lottery.howlrs.net/favicon.ico',
+            description: 'ルーレットアニメーション付きのWeb抽選システムです。イベント作成・景品管理・抽選実行をブラウザ上で完結でき、キャンペーンやイベントでの景品抽選に活用できます。'
         },
         {
             name: 'N Delete｜エヌデリ',

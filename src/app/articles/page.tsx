@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
 import { Flex, Typography } from 'antd';
+
+export const metadata: Metadata = {
+    title: "ブログ記事一覧",
+    description: "howlrs.netの開発ブログ記事一覧です。技術情報やプロダクトの紹介記事を掲載しています。",
+    alternates: { canonical: "/articles" },
+};
 
 // ブログ記事のメタデータ型を定義
 type PostMeta = {

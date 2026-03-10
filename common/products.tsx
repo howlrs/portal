@@ -1,7 +1,7 @@
 'use client';
 
 import { Avatar, Button, Card, Col, Flex, Row } from 'antd';
-import { HomeTwoTone, RightOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, RightOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 const { Meta } = Card;
 
@@ -35,7 +35,7 @@ export const Products = ({ items }: { items: Item[] }) => {
                         ]}
                     >
                         <Meta
-                            avatar={<Avatar src={item.icon_url} />}
+                            avatar={<Avatar src={item.icon_url} icon={<AppstoreOutlined />} />}
                             title={item.name}
                             description={item.description}
                         />

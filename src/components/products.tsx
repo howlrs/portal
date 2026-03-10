@@ -43,7 +43,7 @@ export const ProductsList = () => {
             name: 'Lottery | 抽選ルーレットシステム',
             url: 'https://lottery.howlrs.net/',
             image_url: lottery.src,
-            icon_url: 'https://lottery.howlrs.net/favicon.ico',
+            icon_url: lottery.src,
             description: 'ルーレットアニメーション付きのWeb抽選システムです。イベント作成・景品管理・抽選実行をブラウザ上で完結でき、キャンペーンやイベントでの景品抽選に活用できます。'
         },
         {

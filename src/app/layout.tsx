@@ -5,6 +5,9 @@ import "./globals.css";
 import HeaderNav from "@/components/header-nav";
 import FooterNav from "@/components/footer-nav";
 import AntdDarkProvider from "@/components/antd-dark-provider";
+import Script from "next/script";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-WGDZ62HC6E";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -67,6 +70,18 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

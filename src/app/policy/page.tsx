@@ -4,6 +4,7 @@ import { emailDisplay, setEnvValue } from "../../../common/strconv";
 import style from './style.module.css';
 import Link from "next/link";
 import type { TabsProps } from 'antd';
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
     title: "特定商取引法に基づく表記・利用規約",
@@ -196,6 +197,9 @@ export default function Page() {
     ];
 
     return (
-        <Tabs defaultActiveKey="1" items={items} />
+        <>
+            <BreadcrumbJsonLd items={[{ name: "特定商取引法に基づく表記・利用規約", href: "/policy" }]} />
+            <Tabs defaultActiveKey="1" items={items} />
+        </>
     );
 }

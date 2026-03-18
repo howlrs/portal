@@ -4,6 +4,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
 import { Flex, Typography } from 'antd';
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
     title: "ブログ記事一覧",
@@ -51,6 +52,7 @@ export default async function BlogIndexPage() {
     const posts = await getPosts()
     return (
         <Flex justify='space-between' align='flex-start' vertical>
+            <BreadcrumbJsonLd items={[{ name: "ブログ記事一覧", href: "/articles" }]} />
 
             <Typography style={{ padding: '2rem 0' }}>
                 <h1>ブログ記事一覧</h1>

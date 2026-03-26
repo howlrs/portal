@@ -1,21 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Enable React strict mode for better development warnings
   reactStrictMode: true,
-
-  // Compress responses with gzip
   compress: true,
-
-  // Generate ETags for caching
   generateEtags: true,
 
-  // Optimize images with built-in loader
   images: {
     formats: ["image/avif", "image/webp"],
   },
 
-  // Security and cache headers
+  experimental: {
+    optimizePackageImports: ["antd", "@ant-design/icons"],
+  },
+
   async headers() {
     return [
       // Security headers for all routes
@@ -42,6 +39,26 @@ const nextConfig: NextConfig = {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
           },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+          {
+            key: "Cross-Origin-Opener-Policy",
+            value: "same-origin",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
+              "style-src 'self' 'unsafe-inline'",
+              "img-src 'self' data: https: blob:",
+              "font-src 'self' data:",
+              "connect-src 'self' https://www.google-analytics.com https://analytics.google.com",
+              "frame-src 'self' https://www.youtube.com",
+            ].join("; "),
+          },
         ],
       },
 
@@ -63,6 +80,17 @@ const nextConfig: NextConfig = {
           {
             key: "Cache-Control",
             value: "public, max-age=86400, stale-while-revalidate=604800",
+          },
+        ],
+      },
+
+      // Cache for local icon files
+      {
+        source: "/icons/(.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=2592000, stale-while-revalidate=604800",
           },
         ],
       },

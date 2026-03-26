@@ -35,6 +35,11 @@ a {
   text-decoration: none;
 }
 
+/* ヘッダーナビのレイアウトシフト防止 */
+.ant-menu-horizontal {
+  min-height: 46px;
+}
+
 main {
   text-align: left;
   padding: 2rem;

@@ -5,6 +5,7 @@ import "./globals.css";
 import HeaderNav from "@/components/header-nav";
 import FooterNav from "@/components/footer-nav";
 import AntdDarkProvider from "@/components/antd-dark-provider";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Script from "next/script";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-WGDZ62HC6E";
@@ -88,16 +89,18 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <AntdDarkProvider>
-          <HeaderNav />
-          <main id="main" className="main">
-            {children}
-          </main>
+        <AntdRegistry>
+          <AntdDarkProvider>
+            <HeaderNav />
+            <main id="main" className="main">
+              {children}
+            </main>
 
-          <footer id="footer" className="footer">
-            <FooterNav />
-          </footer>
-        </AntdDarkProvider>
+            <footer id="footer" className="footer">
+              <FooterNav />
+            </footer>
+          </AntdDarkProvider>
+        </AntdRegistry>
       </body>
     </html>
   );

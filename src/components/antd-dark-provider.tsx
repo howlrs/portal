@@ -18,7 +18,16 @@ export default function AntdDarkProvider({ children }: { children: React.ReactNo
         <ConfigProvider
             theme={{
                 algorithm: isDark ? theme.darkAlgorithm : theme.defaultAlgorithm,
+                cssVar: {},
+                token: {
+                    ...(isDark ? {
+                        colorTextSecondary: 'rgba(255, 255, 255, 0.75)',
+                        colorTextTertiary: 'rgba(255, 255, 255, 0.55)',
+                        colorTextQuaternary: 'rgba(255, 255, 255, 0.45)',
+                    } : {}),
+                },
             }}
+            wave={{ disabled: true }}
         >
             {children}
         </ConfigProvider>

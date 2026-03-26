@@ -1,14 +1,15 @@
 'use client';
 
-import { Avatar, Button, Card, Col, Flex, Row } from 'antd';
+import { Avatar, Button, Card, Col, Row } from 'antd';
 import { AppstoreOutlined, RightOutlined } from '@ant-design/icons';
 import Link from 'next/link';
+import Image, { type StaticImageData } from 'next/image';
 const { Meta } = Card;
 
 export interface Item {
     name: string;
     url: string;
-    image_url: string;
+    image: StaticImageData;
     icon_url: string;
     description: string;
 };
@@ -19,23 +20,26 @@ export const Products = ({ items }: { items: Item[] }) => {
             {items.map((item: Item, i: number) => (
                 <Col key={i} span={8} xs={24} sm={12} md={12} lg={8}>
                     <Card
-                        style={{ width: '20wv' }}
                         cover={
-                            <img
+                            <Image
+                                src={item.image}
                                 alt={item.name}
-                                src={item.image_url}
+                                sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 33vw"
+                                placeholder="blur"
+                                priority={i < 3}
+                                style={{ width: '100%', height: 'auto' }}
                             />
                         }
                         actions={[
-                            <Link href={item.url} key={i} style={{ textAlign: 'right' }}>
-                                <Button type="link">
+                            <Link href={item.url} key={i} style={{ textAlign: 'right' }} aria-label={`${item.name} を開く`}>
+                                <Button type="link" aria-label={`${item.name} を開く`}>
                                     Go to App <RightOutlined />
                                 </Button>
                             </Link>
                         ]}
                     >
                         <Meta
-                            avatar={<Avatar src={item.icon_url} icon={<AppstoreOutlined />} />}
+                            avatar={<Avatar src={item.icon_url} alt={`${item.name} アイコン`} icon={<AppstoreOutlined />} />}
                             title={item.name}
                             description={item.description}
                         />
@@ -45,5 +49,3 @@ export const Products = ({ items }: { items: Item[] }) => {
         </Row>
     );
 };
-
-{/* <Flex justify='space-between' align='center' wrap></Flex> */ }

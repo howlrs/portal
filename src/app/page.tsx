@@ -3,7 +3,10 @@ import { ProductsList } from "../components/products";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
-  title: "ホーム",
+  title: {
+    absolute:
+      "HOWLRS｜ソフトウェアエンジニア 寺島和宏のプロダクトポートフォリオ",
+  },
   description:
     "ソフトウェアエンジニア 寺島和宏 (howlrs) が開発するプロダクト一覧。Webアプリ、デスクトップアプリ、APIなど多様なツールを紹介しています。",
   alternates: { canonical: "/" },

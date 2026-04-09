@@ -12,6 +12,7 @@ export interface Item {
     image: StaticImageData;
     icon_url: string;
     description: string;
+    featureList?: string[];
 };
 
 export const Products = ({ items }: { items: Item[] }) => {

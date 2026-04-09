@@ -4,7 +4,8 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "ホーム",
-  description: "howlrs.netが提供するプロダクト一覧です。Webアプリ、デスクトップアプリ、APIなど多様なツールを紹介しています。",
+  description:
+    "ソフトウェアエンジニア 寺島和宏 (howlrs) が開発するプロダクト一覧。Webアプリ、デスクトップアプリ、APIなど多様なツールを紹介しています。",
   alternates: { canonical: "/" },
 };
 

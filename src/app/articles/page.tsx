@@ -8,7 +8,8 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
     title: "ブログ記事一覧",
-    description: "howlrs.netの開発ブログ記事一覧です。技術情報やプロダクトの紹介記事を掲載しています。",
+    description:
+        "ソフトウェアエンジニア 寺島和宏 (howlrs) の開発ブログ。プロダクト紹介や技術情報を掲載しています。",
     alternates: { canonical: "/articles" },
 };
 

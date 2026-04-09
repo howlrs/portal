@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://product.howlrs.net";
 const siteTitle = process.env.NEXT_PUBLIC_SITE_TITLE || "howlrs.net Products";
-const siteDescription = `${siteTitle} - howlrs.netで公開されているプロダクトを紹介しています。`;
+const siteDescription = "howlrs & rejoin LLC. — ソフトウェアエンジニア 寺島和宏が開発・運営するプロダクト紹介サイトです。";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -49,19 +49,47 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: siteTitle,
-  url: baseUrl,
-  description: siteDescription,
-  inLanguage: "ja",
-  publisher: {
-    "@type": "Organization",
-    name: "howlrs.net",
-    url: "https://howlrs.net",
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteTitle,
+    url: baseUrl,
+    description: siteDescription,
+    inLanguage: "ja",
+    publisher: {
+      "@type": "Organization",
+      name: "howlrs & rejoin LLC.",
+      url: "https://howlrs.net",
+    },
   },
-};
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "寺島和宏",
+    alternateName: "terashima kazuhiro",
+    jobTitle: "ソフトウェアエンジニア",
+    url: "https://howlrs.net",
+    sameAs: ["https://github.com/howlrs"],
+    worksFor: {
+      "@type": "Organization",
+      name: "howlrs & rejoin LLC.",
+      url: "https://howlrs.net",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "howlrs & rejoin LLC.",
+    url: "https://howlrs.net",
+    founder: {
+      "@type": "Person",
+      name: "寺島和宏",
+      alternateName: "terashima kazuhiro",
+    },
+    sameAs: ["https://github.com/howlrs"],
+  },
+];
 
 export default function RootLayout({
   children,
@@ -71,6 +99,8 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"

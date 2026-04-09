@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: { params: Props }): Promise<M
     const postMeta = matterResult.data as PostMeta;
     return {
         title: postMeta.title,
-        description: `${postMeta.title} - ${postMeta.date}公開の記事`,
+        description: `${postMeta.title} — howlrs.net 開発ブログ`,
         alternates: { canonical: `/articles/${slug}` },
     };
 }
@@ -78,13 +78,14 @@ const BlogPost = async ({ params }: { params: Props }) => {
         url: `${BASE_URL}/articles/${slug}`,
         inLanguage: "ja",
         author: {
-            "@type": "Organization",
-            name: "howlrs.net",
+            "@type": "Person",
+            name: "寺島和宏",
+            alternateName: "terashima kazuhiro",
             url: "https://howlrs.net",
         },
         publisher: {
             "@type": "Organization",
-            name: "howlrs.net",
+            name: "howlrs & rejoin LLC.",
             url: "https://howlrs.net",
         },
         mainEntityOfPage: {
@@ -102,11 +103,13 @@ const BlogPost = async ({ params }: { params: Props }) => {
                 ]}
             />
             <JsonLd data={articleJsonLd} />
-            <h1>{postMeta.title}</h1>
-            <small>公開日: {postMeta.date}</small>
-            <Typography style={{ padding: '2rem 0' }}>
-                <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-            </Typography>
+            <article>
+                <h1>{postMeta.title}</h1>
+                <time dateTime={postMeta.date}>公開日: {postMeta.date}</time>
+                <Typography style={{ padding: '2rem 0' }}>
+                    <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+                </Typography>
+            </article>
         </Flex>
     );
 };

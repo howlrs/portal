@@ -8,9 +8,11 @@ async function getBlogPostsUrls() {
     const fileNames = fs.readdirSync(blogDirectory);
     const urls: MetadataRoute.Sitemap = fileNames.map((fileName) => {
         const slug = fileName.replace(/\.md$/, '');
+        const filePath = path.join(blogDirectory, fileName);
+        const stat = fs.statSync(filePath);
         return {
             url: `${process.env.NEXT_PUBLIC_BASE_URL}/articles/${slug}`,
-            lastModified: new Date().toISOString(),
+            lastModified: stat.mtime.toISOString(),
             priority: 0.6,
             changeFrequency: 'monthly',
         };

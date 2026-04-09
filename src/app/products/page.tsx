@@ -5,7 +5,8 @@ import { BreadcrumbJsonLd, JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
     title: "プロダクト一覧",
-    description: "howlrs.netが開発・提供するWebアプリ、デスクトップアプリ、APIサービスの一覧です。",
+    description:
+        "howlrs & rejoin LLC. が開発・提供するWebアプリ、デスクトップアプリ、APIサービスの一覧です。Orbit Bola、ANTOKI、QRで管理、JLPT学習アプリなど。",
     alternates: { canonical: "/products" },
 };
 
@@ -23,9 +24,11 @@ export default function Page() {
             price: "0",
             priceCurrency: "JPY",
         },
+        ...(item.featureList && { featureList: item.featureList.join(", ") }),
         author: {
-            "@type": "Organization",
-            name: "howlrs.net",
+            "@type": "Person",
+            name: "寺島和宏",
+            alternateName: "terashima kazuhiro",
             url: "https://howlrs.net",
         },
     }));

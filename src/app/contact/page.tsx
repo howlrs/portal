@@ -4,7 +4,8 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
     title: "お問い合わせ",
-    description: "howlrs.netへのお問い合わせはこちらからどうぞ。",
+    description:
+        "howlrs & rejoin LLC. / ソフトウェアエンジニア 寺島和宏へのお問い合わせはこちらからどうぞ。",
     alternates: { canonical: "/contact" },
 };
 

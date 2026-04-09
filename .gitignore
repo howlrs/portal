@@ -40,6 +40,12 @@ yarn-error.log*
 # claude code
 .claude/
 
+# python
+.venv/
+
+# misc logs
+history.txt
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

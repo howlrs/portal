@@ -51,7 +51,7 @@ export default async function Image() {
             特定商取引法に基づく表記
           </div>
           <div style={{ fontSize: 24, color: "#a0a0c0", marginTop: 8 }}>
-            howlrs & rejoin LLC.
+            howlrs
           </div>
         </div>
       </div>

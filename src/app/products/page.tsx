@@ -3,10 +3,13 @@ import { ProductsList } from "@/components/products";
 import { productItems } from "../../../common/product-items";
 import { BreadcrumbJsonLd, JsonLd } from "@/components/json-ld";
 
+const BASE_URL =
+    process.env.NEXT_PUBLIC_BASE_URL || "https://product.howlrs.net";
+
 export const metadata: Metadata = {
     title: "プロダクト一覧",
     description:
-        "howlrs & rejoin LLC. が開発・提供するWebアプリ、デスクトップアプリ、APIサービスの一覧です。Orbit Bola、ANTOKI、QRで管理、JLPT学習アプリなど。",
+        "寺島和宏 (howlrs) が開発・提供するWebアプリ、デスクトップアプリ、APIサービスの一覧です。Orbit Bola、ANTOKI、QRで管理、JLPT学習アプリなど。",
     alternates: { canonical: "/products" },
 };
 
@@ -28,8 +31,8 @@ export default function Page() {
         author: {
             "@type": "Person",
             name: "寺島和宏",
-            alternateName: "terashima kazuhiro",
-            url: "https://howlrs.net",
+            alternateName: ["terashima kazuhiro", "howlrs"],
+            url: BASE_URL,
         },
     }));
 

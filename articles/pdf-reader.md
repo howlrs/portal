@@ -7,7 +7,7 @@ date: '2026-04-09'
 
 請求書や領収書がPDF形式で届くことは多いですが、Excelや会計ソフトに入力するために手動で数字を打ち直している方も多いのではないでしょうか。ファイル数が増えれば増えるほど、この作業は地味に時間を奪っていきます。
 
-howlrs & rejoin LLC. が開発した **PDF READER** は、そのボトルネックを解消するためのデスクトップツールです。PDFファイルをGemini AIで解析し、構造化されたCSVデータとして出力します。
+寺島和宏 (howlrs) が開発した **PDF READER** は、そのボトルネックを解消するためのデスクトップツールです。PDFファイルをGemini AIで解析し、構造化されたCSVデータとして出力します。
 
 ダウンロードは [github.com/howlrs/pdf-reader/releases](https://github.com/howlrs/pdf-reader/releases) から。
 

@@ -22,7 +22,7 @@ export default async function BlogIndexPage() {
             <header className={styles.header}>
                 <h1 className={styles.heading}>ブログ記事一覧</h1>
                 <p className={styles.subtitle}>
-                    howlrs &amp; rejoin LLC. / 寺島和宏が開発したプロダクトの紹介と、開発の背景・技術解説を掲載しています。
+                    ソフトウェアエンジニア 寺島和宏 (howlrs) が開発したプロダクトの紹介と、開発の背景・技術解説を掲載しています。
                 </p>
             </header>
 

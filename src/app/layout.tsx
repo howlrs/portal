@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://product.howlrs.net";
 const siteTitle = process.env.NEXT_PUBLIC_SITE_TITLE || "howlrs.net Products";
-const siteDescription = "howlrs & rejoin LLC. — ソフトウェアエンジニア 寺島和宏が開発・運営するプロダクト紹介サイトです。";
+const siteDescription = "ソフトウェアエンジニア 寺島和宏 (howlrs) が開発・運営するプロダクト紹介ポートフォリオサイトです。";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -57,36 +57,20 @@ const jsonLd = [
     url: baseUrl,
     description: siteDescription,
     inLanguage: "ja",
-    publisher: {
-      "@type": "Organization",
-      name: "howlrs & rejoin LLC.",
-      url: "https://howlrs.net",
+    author: {
+      "@type": "Person",
+      name: "寺島和宏",
+      alternateName: "terashima kazuhiro",
+      url: baseUrl,
     },
   },
   {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "寺島和宏",
-    alternateName: "terashima kazuhiro",
+    alternateName: ["terashima kazuhiro", "howlrs"],
     jobTitle: "ソフトウェアエンジニア",
-    url: "https://howlrs.net",
-    sameAs: ["https://github.com/howlrs"],
-    worksFor: {
-      "@type": "Organization",
-      name: "howlrs & rejoin LLC.",
-      url: "https://howlrs.net",
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "howlrs & rejoin LLC.",
-    url: "https://howlrs.net",
-    founder: {
-      "@type": "Person",
-      name: "寺島和宏",
-      alternateName: "terashima kazuhiro",
-    },
+    url: baseUrl,
     sameAs: ["https://github.com/howlrs"],
   },
 ];

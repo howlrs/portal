@@ -9,7 +9,7 @@ export default function HomeHero() {
                 寺島和宏 (howlrs) が手がけた<wbr />プロダクトとエンジニアリング
             </h1>
             <p className={styles.lead}>
-                howlrs &amp; rejoin LLC. 代表 / ソフトウェアエンジニアの寺島和宏が個人および事業として開発した
+                ソフトウェアエンジニア 寺島和宏 (howlrs) が個人として開発した
                 Web アプリ、デスクトップアプリ、API、AI ツールを紹介するポートフォリオサイトです。
                 MBTI 地域マッチング <Link href="/articles/antoki">ANTOKI</Link>、
                 宇宙状況認識 API <Link href="/articles/orbit-bola">Orbit Bola!!</Link>、

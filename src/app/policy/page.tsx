@@ -9,7 +9,7 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 export const metadata: Metadata = {
     title: "特定商取引法に基づく表記・利用規約",
     description:
-        "howlrs & rejoin LLC. の特定商取引法に基づく表記および利用規約・プライバシーポリシーを掲載しています。",
+        "寺島和宏 (howlrs) の特定商取引法に基づく表記および利用規約・プライバシーポリシーを掲載しています。",
     alternates: { canonical: "/policy" },
 };
 

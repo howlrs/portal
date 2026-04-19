@@ -70,13 +70,14 @@ const BlogPost = async ({ params }: { params: Props }) => {
         author: {
             "@type": "Person",
             name: "寺島和宏",
-            alternateName: "terashima kazuhiro",
-            url: "https://howlrs.net",
+            alternateName: ["terashima kazuhiro", "howlrs"],
+            url: BASE_URL,
         },
         publisher: {
-            "@type": "Organization",
-            name: "howlrs & rejoin LLC.",
-            url: "https://howlrs.net",
+            "@type": "Person",
+            name: "寺島和宏",
+            alternateName: ["terashima kazuhiro", "howlrs"],
+            url: BASE_URL,
         },
         mainEntityOfPage: {
             "@type": "WebPage",

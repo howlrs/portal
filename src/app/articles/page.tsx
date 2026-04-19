@@ -1,73 +1,46 @@
 import type { Metadata } from "next";
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import Link from 'next/link';
-import { Flex, Typography } from 'antd';
+import { Flex } from 'antd';
+import { getAllPosts } from '../../../common/articles';
 import { BreadcrumbJsonLd } from "@/components/json-ld";
+import styles from './page.module.css';
 
 export const metadata: Metadata = {
     title: "ブログ記事一覧",
     description:
-        "ソフトウェアエンジニア 寺島和宏 (howlrs) の開発ブログ。プロダクト紹介や技術情報を掲載しています。",
+        "ソフトウェアエンジニア 寺島和宏 (howlrs) の開発ブログ記事一覧。ANTOKI、Orbit Bola!!、QRで管理、JLPT学習アプリなどのプロダクト紹介、技術解説、開発背景を掲載しています。",
     alternates: { canonical: "/articles" },
 };
 
-// ブログ記事のメタデータ型を定義
-type PostMeta = {
-    title: string;
-    date: string;
-};
-
-const blogDirectory = path.join(process.cwd(), 'articles');
-
-async function getPosts() {
-    const fileNames = fs.readdirSync(blogDirectory);
-    const posts = fileNames.map((fileName) => {
-        const slug = fileName.replace(/\.md$/, '');
-        const filePath = path.join(blogDirectory, fileName);
-        const fileContent = fs.readFileSync(filePath, 'utf-8');
-        const matterResult = matter(fileContent);
-        const postMeta = matterResult.data as PostMeta;
-        return {
-            slug,
-            title: postMeta.title,
-            date: postMeta.date
-        };
-    });
-
-    // sorted by date
-    posts.sort((a, b) => {
-        if (a.date < b.date) {
-            return 1;
-        } else {
-            return -1;
-        }
-    });
-
-    return posts;
-}
-
-
 export default async function BlogIndexPage() {
-    const posts = await getPosts()
+    const posts = getAllPosts();
+
     return (
         <Flex justify='space-between' align='flex-start' vertical>
             <BreadcrumbJsonLd items={[{ name: "ブログ記事一覧", href: "/articles" }]} />
 
-            <Typography style={{ padding: '2rem 0' }}>
-                <h1>ブログ記事一覧</h1>
-                <ul>
-                    {posts.map((post) => (
-                        <li key={post.slug}>
-                            <Link href={`/articles/${post.slug}`}>
-                                {post.title.substring(0, 30) + '...'}
+            <header className={styles.header}>
+                <h1 className={styles.heading}>ブログ記事一覧</h1>
+                <p className={styles.subtitle}>
+                    howlrs &amp; rejoin LLC. / 寺島和宏が開発したプロダクトの紹介と、開発の背景・技術解説を掲載しています。
+                </p>
+            </header>
+
+            <ul className={styles.list}>
+                {posts.map((post) => (
+                    <li key={post.slug} className={styles.item}>
+                        <article>
+                            <Link href={`/articles/${post.slug}`} className={styles.link}>
+                                <time dateTime={post.date} className={styles.date}>
+                                    {post.date}
+                                </time>
+                                <h2 className={styles.title}>{post.title}</h2>
+                                <p className={styles.excerpt}>{post.description}</p>
                             </Link>
-                            <p>{post.date}</p>
-                        </li>
-                    ))}
-                </ul>
-            </Typography>
+                        </article>
+                    </li>
+                ))}
+            </ul>
         </Flex>
     );
 }

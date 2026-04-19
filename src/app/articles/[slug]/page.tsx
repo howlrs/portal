@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import remarkParse from 'remark-parse';
@@ -10,42 +9,32 @@ import rehypeStringify from 'rehype-stringify';
 import remarkYoutube from 'remark-youtube';
 import { Flex, Typography } from 'antd';
 import { BreadcrumbJsonLd, JsonLd } from "@/components/json-ld";
+import { getPost } from "../../../../common/articles";
 
 const blogDirectory = path.join(process.cwd(), 'articles');
 
-// ブログ記事のメタデータ型を定義
-type PostMeta = {
-    title: string;
-    date: string;
-};
-
 export async function generateStaticParams() {
-    console.log(blogDirectory);
-
     const fileNames = fs.readdirSync(blogDirectory);
-
-    return fileNames.map((fileName) => {
-        const slug = fileName.replace(/\.md$/, '');
-        return {
-            params: {
-                slug: slug,
-            }
-        };
-    });
+    return fileNames.map((fileName) => ({
+        slug: fileName.replace(/\.md$/, ''),
+    }));
 };
 
 type Props = Promise<{ slug: string; }>
 
 export async function generateMetadata({ params }: { params: Props }): Promise<Metadata> {
     const { slug } = await params;
-    const filePath = path.join(blogDirectory, `${slug}.md`);
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-    const matterResult = matter(fileContent);
-    const postMeta = matterResult.data as PostMeta;
+    const { meta } = getPost(slug);
     return {
-        title: postMeta.title,
-        description: `${postMeta.title} — howlrs.net 開発ブログ`,
+        title: meta.title,
+        description: meta.description,
         alternates: { canonical: `/articles/${slug}` },
+        openGraph: {
+            type: "article",
+            title: meta.title,
+            description: meta.description,
+            publishedTime: meta.date,
+        },
     };
 }
 
@@ -54,11 +43,7 @@ const BASE_URL =
 
 const BlogPost = async ({ params }: { params: Props }) => {
     const { slug } = await params;
-    const filePath = path.join(blogDirectory, `${slug}.md`);
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-    const matterResult = matter(fileContent);
-    const postMeta = matterResult.data as PostMeta;
-
+    const { meta, content } = getPost(slug);
 
     const processedContent = await remark()
         .use(html)
@@ -66,15 +51,16 @@ const BlogPost = async ({ params }: { params: Props }) => {
         .use(remarkYoutube)
         .use(remarkRehype)
         .use(rehypeStringify)
-        .process(matterResult.content);
+        .process(content);
     const contentHtml = processedContent.toString();
 
     const articleJsonLd = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        headline: postMeta.title,
-        datePublished: postMeta.date,
-        dateModified: postMeta.date,
+        headline: meta.title,
+        description: meta.description,
+        datePublished: meta.date,
+        dateModified: meta.date,
         url: `${BASE_URL}/articles/${slug}`,
         inLanguage: "ja",
         author: {
@@ -99,13 +85,13 @@ const BlogPost = async ({ params }: { params: Props }) => {
             <BreadcrumbJsonLd
                 items={[
                     { name: "ブログ記事一覧", href: "/articles" },
-                    { name: postMeta.title, href: `/articles/${slug}` },
+                    { name: meta.title, href: `/articles/${slug}` },
                 ]}
             />
             <JsonLd data={articleJsonLd} />
             <article>
-                <h1>{postMeta.title}</h1>
-                <time dateTime={postMeta.date}>公開日: {postMeta.date}</time>
+                <h1>{meta.title}</h1>
+                <time dateTime={meta.date}>公開日: {meta.date}</time>
                 <Typography style={{ padding: '2rem 0' }}>
                     <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
                 </Typography>

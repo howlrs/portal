@@ -1,0 +1,58 @@
+.cta {
+    margin: 2.5rem 0 1rem;
+    border: 1px solid var(--gray-alpha-200, rgba(0, 0, 0, 0.12));
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+@media (prefers-color-scheme: dark) {
+    .cta {
+        background: rgba(255, 255, 255, 0.04);
+    }
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin: 0;
+}
+
+.title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.tagline {
+    font-size: 0.92rem;
+    opacity: 0.8;
+    margin: 0 0 0.35rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 1.2rem;
+    border-radius: 999px;
+    background: var(--foreground);
+    color: var(--background);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    width: fit-content;
+    transition: opacity 0.15s;
+}
+
+.button:hover {
+    opacity: 0.88;
+}

@@ -1,28 +1,33 @@
-'use client';
-
-import { Descriptions } from 'antd';
-import type { DescriptionsProps } from 'antd';
-import { emailDisplay } from '../../common/strconv';
-
+import Link from 'next/link';
+import FooterUserInfo from './footer-user-info';
+import { productLinks } from '../../common/product-article-map';
+import styles from './footer-nav.module.css';
 
 export default function FooterNav() {
-    const items: DescriptionsProps['items'] = [
-        {
-            key: '1',
-            label: 'Name',
-            children: process.env.NEXT_PUBLIC_USERNAME,
-        },
-        {
-            key: '2',
-            label: 'Email',
-            children: emailDisplay(process.env.NEXT_PUBLIC_EMAIL ? process.env.NEXT_PUBLIC_EMAIL : ''),
-        }
-    ];
-
-
     return (
-        <>
-            <Descriptions title="User Info" layout="vertical" items={items} />
-        </>
+        <div className={styles.container}>
+            <nav className={styles.products} aria-label="プロダクトリンク">
+                <h2 className={styles.heading}>Products</h2>
+                <ul className={styles.list}>
+                    {productLinks.map((p) => (
+                        <li key={p.articleSlug} className={styles.item}>
+                            <a
+                                href={p.externalUrl}
+                                target="_blank"
+                                rel="noopener"
+                                className={styles.extLink}
+                            >
+                                {p.productName}
+                            </a>
+                            <span className={styles.sep}>·</span>
+                            <Link href={`/articles/${p.articleSlug}`} className={styles.articleLink}>
+                                紹介記事
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+            <FooterUserInfo />
+        </div>
     );
-};
+}

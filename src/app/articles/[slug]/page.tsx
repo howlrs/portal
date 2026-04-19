@@ -9,7 +9,9 @@ import rehypeStringify from 'rehype-stringify';
 import remarkYoutube from 'remark-youtube';
 import { Flex, Typography } from 'antd';
 import { BreadcrumbJsonLd, JsonLd } from "@/components/json-ld";
+import ArticleCta from "@/components/article-cta";
 import { getPost } from "../../../../common/articles";
+import { getProductByArticleSlug } from "../../../../common/product-article-map";
 
 const blogDirectory = path.join(process.cwd(), 'articles');
 
@@ -54,6 +56,8 @@ const BlogPost = async ({ params }: { params: Props }) => {
         .process(content);
     const contentHtml = processedContent.toString();
 
+    const product = getProductByArticleSlug(slug);
+
     const articleJsonLd = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -95,6 +99,7 @@ const BlogPost = async ({ params }: { params: Props }) => {
                 <Typography style={{ padding: '2rem 0' }}>
                     <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
                 </Typography>
+                {product && <ArticleCta product={product} />}
             </article>
         </Flex>
     );

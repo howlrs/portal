@@ -6,8 +6,7 @@ export default function HomeHero() {
         <section className={styles.hero}>
             <p className={styles.eyebrow}>HOWLRS — Software Engineer Portfolio</p>
             <h1 className={styles.title}>
-                寺島和宏 (howlrs) が手がけた<br />
-                プロダクトとエンジニアリング
+                寺島和宏 (howlrs) が手がけた<wbr />プロダクトとエンジニアリング
             </h1>
             <p className={styles.lead}>
                 howlrs &amp; rejoin LLC. 代表 / ソフトウェアエンジニアの寺島和宏が個人および事業として開発した

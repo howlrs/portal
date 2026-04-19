@@ -35,9 +35,10 @@ a {
   text-decoration: none;
 }
 
-/* ヘッダーナビのレイアウトシフト防止 */
+/* ヘッダーナビのレイアウトシフト防止 + 中央揃え */
 .ant-menu-horizontal {
   min-height: 46px;
+  justify-content: center;
 }
 
 main {

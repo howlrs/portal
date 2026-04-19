@@ -12,7 +12,7 @@ export default function ArticleCta({ product }: { product: ProductLink }) {
                     href={product.externalUrl}
                     className={styles.button}
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     aria-label={`${product.productName} を別タブで開く`}
                 >
                     アプリを開く ↗

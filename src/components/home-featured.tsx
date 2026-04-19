@@ -78,7 +78,7 @@ export default function HomeFeatured() {
                                     href={item.externalUrl}
                                     className={styles.openApp}
                                     target="_blank"
-                                    rel="noopener"
+                                    rel="noopener noreferrer"
                                     aria-label={`${item.name} を別タブで開く`}
                                 >
                                     アプリを開く ↗

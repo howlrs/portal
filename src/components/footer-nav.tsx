@@ -14,7 +14,7 @@ export default function FooterNav() {
                             <a
                                 href={p.externalUrl}
                                 target="_blank"
-                                rel="noopener"
+                                rel="noopener noreferrer"
                                 className={styles.extLink}
                             >
                                 {p.productName}

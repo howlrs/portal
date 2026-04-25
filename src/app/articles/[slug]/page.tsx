@@ -12,6 +12,7 @@ import { BreadcrumbJsonLd, JsonLd } from "@/components/json-ld";
 import ArticleCta from "@/components/article-cta";
 import { getPost } from "../../../../common/articles";
 import { getProductByArticleSlug } from "../../../../common/product-article-map";
+import styles from "./article.module.css";
 
 const blogDirectory = path.join(process.cwd(), 'articles');
 
@@ -94,7 +95,7 @@ const BlogPost = async ({ params }: { params: Props }) => {
                 ]}
             />
             <JsonLd data={articleJsonLd} />
-            <article>
+            <article className={styles.article}>
                 <h1>{meta.title}</h1>
                 <time dateTime={meta.date}>公開日: {meta.date}</time>
                 <Typography style={{ padding: '2rem 0' }}>

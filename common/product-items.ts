@@ -118,4 +118,11 @@ export const productItems: Omit<Item, 'image'>[] = [
         description: 'Excelファイルを解析してCSV形式のデータに変換するツールを提供することを目的としています。具体的には、ユーザーがExcelファイルをアプリケーションにドロップすることで、その内容を解析し、CSV形式のテキストデータとして取得できるようにします。',
         featureList: ['Excel解析', 'CSV変換', 'ドラッグ&ドロップ対応'],
     },
+    {
+        name: 'Claude Checker | Claude Code セッションかんばん監視ツール',
+        url: 'https://github.com/howlrs/claude-checker',
+        icon_url: '/icons/claude-checker.svg',
+        description: 'WSL/Linux で動く Claude Code の進捗をブラウザのローカルかんばんでリアルタイム監視する Rust 製シングルバイナリです。並列セッションの状態 (needs_permission / running / waiting_for_user / idle) と TODO を一覧でき、人間の応答が必要なセッションをタブ通知で知らせます。',
+        featureList: ['Claude Code セッション監視', 'リアルタイム SSE 更新', 'TODO/DOING/DONE かんばん', 'タブ・favicon 通知', 'シングルバイナリ (Rust + axum)'],
+    },
 ];

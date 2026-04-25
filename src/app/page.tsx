@@ -10,7 +10,7 @@ export const metadata: Metadata = {
       "HOWLRS｜ソフトウェアエンジニア 寺島和宏のプロダクトポートフォリオ",
   },
   description:
-    "寺島和宏 (howlrs) が開発・運営する Web アプリ、デスクトップアプリ、API、AI ツールのポートフォリオ。ANTOKI (MBTI 地域マッチング)、Orbit Bola!! (宇宙状況認識 API)、QRで管理 (店舗管理) など 16 プロダクトを紹介。",
+    "寺島和宏 (howlrs) が開発・運営する Web アプリ、デスクトップアプリ、API、AI ツールのポートフォリオ。ANTOKI (MBTI 地域マッチング)、Orbit Bola!! (宇宙状況認識 API)、QRで管理 (店舗管理) など 17 プロダクトを紹介。",
   alternates: { canonical: "/" },
 };
 

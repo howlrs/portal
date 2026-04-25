@@ -13,6 +13,11 @@ export interface Item {
     icon_url: string;
     description: string;
     featureList?: string[];
+    /**
+     * 提供終了したプロダクト。true の場合カードを半透明で表示し、
+     * "Go to App" CTA を「紹介記事を読む」内部リンクに置き換える。
+     */
+    archived?: boolean;
 };
 
 export const Products = ({ items }: { items: Item[] }) => {
@@ -21,6 +26,7 @@ export const Products = ({ items }: { items: Item[] }) => {
             {items.map((item: Item, i: number) => (
                 <Col key={i} span={8} xs={24} sm={12} md={12} lg={8}>
                     <Card
+                        style={item.archived ? { opacity: 0.7 } : undefined}
                         cover={
                             <Image
                                 src={item.image}
@@ -28,13 +34,21 @@ export const Products = ({ items }: { items: Item[] }) => {
                                 sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 33vw"
                                 placeholder="blur"
                                 priority={i < 3}
-                                style={{ width: '100%', height: 'auto' }}
+                                style={{ width: '100%', height: 'auto', filter: item.archived ? 'grayscale(0.6)' : undefined }}
                             />
                         }
                         actions={[
-                            <Link href={item.url} key={i} style={{ textAlign: 'right' }} aria-label={`${item.name} を開く`}>
-                                <Button type="link" aria-label={`${item.name} を開く`}>
-                                    Go to App <RightOutlined />
+                            <Link
+                                href={item.url}
+                                key={i}
+                                style={{ textAlign: 'right' }}
+                                aria-label={item.archived ? `${item.name} の紹介記事を読む` : `${item.name} を開く`}
+                            >
+                                <Button
+                                    type="link"
+                                    aria-label={item.archived ? `${item.name} の紹介記事を読む` : `${item.name} を開く`}
+                                >
+                                    {item.archived ? '紹介記事を読む (提供終了)' : 'Go to App'} <RightOutlined />
                                 </Button>
                             </Link>
                         ]}

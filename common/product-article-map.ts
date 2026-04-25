@@ -8,6 +8,11 @@ export type ProductLink = {
     productName: string;
     tagline: string;
     externalUrl: string;
+    /**
+     * 提供終了したプロダクト。true の場合 CTA ボタンや footer の外部リンクは
+     * 無効化され、紹介記事への内部リンクのみ残す。
+     */
+    archived?: boolean;
 };
 
 export const productLinks: ProductLink[] = [
@@ -49,9 +54,10 @@ export const productLinks: ProductLink[] = [
     },
     {
         articleSlug: 'xauto-launch',
-        productName: 'X LONG POST AUTO',
-        tagline: 'X/Twitter 自動投稿マネージャー',
-        externalUrl: 'https://xauto.howlrs.net/',
+        productName: 'X LONG POST AUTO [提供終了]',
+        tagline: 'X/Twitter 自動投稿マネージャー (アーカイブ)',
+        externalUrl: '/articles/xauto-launch',
+        archived: true,
     },
     {
         articleSlug: 'ndelete',
@@ -106,6 +112,12 @@ export const productLinks: ProductLink[] = [
         productName: 'Excel to CSV',
         tagline: 'Excel 解析 CSV 変換ツール',
         externalUrl: 'https://github.com/howlrs/excel-to-csv/releases',
+    },
+    {
+        articleSlug: 'claude-checker',
+        productName: 'Claude Checker',
+        tagline: 'Claude Code セッションかんばん監視ツール',
+        externalUrl: 'https://github.com/howlrs/claude-checker',
     },
 ];
 

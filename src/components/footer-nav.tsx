@@ -11,14 +11,23 @@ export default function FooterNav() {
                 <ul className={styles.list}>
                     {productLinks.map((p) => (
                         <li key={p.articleSlug} className={styles.item}>
-                            <a
-                                href={p.externalUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={styles.extLink}
-                            >
-                                {p.productName}
-                            </a>
+                            {p.archived ? (
+                                <span
+                                    className={styles.archivedName}
+                                    title="現在は提供を終了しています"
+                                >
+                                    {p.productName}
+                                </span>
+                            ) : (
+                                <a
+                                    href={p.externalUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.extLink}
+                                >
+                                    {p.productName}
+                                </a>
+                            )}
                             <span className={styles.sep}>·</span>
                             <Link href={`/articles/${p.articleSlug}`} className={styles.articleLink}>
                                 紹介記事

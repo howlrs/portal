@@ -104,11 +104,12 @@ export const ProductsList = () => {
             description: '講義と漫才で学ぶ算数数学です。Google Gemini AIが各数学公式を講義、漫才形式で出力しました。自分にあった出力を選択し算数や数学を学ぶことができます。'
         },
         {
-            name: 'X LONG POST AUTO WITH SCHEDULER',
-            url: 'https://xauto.howlrs.net/',
+            name: 'X LONG POST AUTO WITH SCHEDULER [提供終了]',
+            url: '/articles/xauto-launch',
             image: xauto,
             icon_url: '/icons/xauto.svg',
-            description: 'X LONG POST AUTO WITH SCHEDULER: Twitter/X 自動投稿マネージャーはTwitter/Xの自動投稿サービスを提供しております。'
+            description: '【提供終了】Twitter/X の API 仕様変更に伴いサービスを停止しました。本ページは過去の機能紹介として残しています。スレッド形式予約投稿、CSV 取り込み、秒単位スケジュール、自動リポスト、Google スプレッドシート連携などを提供していました。',
+            archived: true
         },
         {
             name: 'PDF READER',

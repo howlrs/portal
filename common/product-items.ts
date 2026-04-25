@@ -91,11 +91,12 @@ export const productItems: Omit<Item, 'image'>[] = [
         featureList: ['Gemini AI生成コンテンツ', '講義形式', '漫才形式', '算数・数学学習'],
     },
     {
-        name: 'X LONG POST AUTO WITH SCHEDULER',
-        url: 'https://xauto.howlrs.net/',
+        name: 'X LONG POST AUTO WITH SCHEDULER [提供終了]',
+        url: '/articles/xauto-launch',
         icon_url: '/icons/xauto.svg',
-        description: 'X LONG POST AUTO WITH SCHEDULER: Twitter/X 自動投稿マネージャーはTwitter/Xの自動投稿サービスを提供しております。',
-        featureList: ['X/Twitter自動投稿', 'スケジュール投稿', '長文投稿対応'],
+        description: '【提供終了】Twitter/X の API 仕様変更に伴いサービスを停止しました。本ページは過去の機能紹介として残しています。スレッド形式予約投稿、CSV 取り込み、秒単位スケジュール、自動リポスト、Google スプレッドシート連携などを提供していました。',
+        featureList: ['提供終了 (アーカイブ)', 'X/Twitter自動投稿', 'スケジュール投稿', '長文投稿対応'],
+        archived: true,
     },
     {
         name: 'PDF READER',

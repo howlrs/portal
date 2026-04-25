@@ -65,3 +65,10 @@
     text-underline-offset: 3px;
     opacity: 1;
 }
+
+.archivedName {
+    color: inherit;
+    font-weight: 500;
+    opacity: 0.55;
+    text-decoration: line-through;
+}

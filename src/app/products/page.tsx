@@ -14,27 +14,29 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    const softwareJsonLd = productItems.map((item) => ({
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        name: item.name,
-        url: item.url,
-        description: item.description,
-        applicationCategory: "WebApplication",
-        operatingSystem: "All",
-        offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "JPY",
-        },
-        ...(item.featureList && { featureList: item.featureList.join(", ") }),
-        author: {
-            "@type": "Person",
-            name: "寺島和宏",
-            alternateName: ["terashima kazuhiro", "howlrs"],
-            url: BASE_URL,
-        },
-    }));
+    const softwareJsonLd = productItems
+        .filter((item) => !item.archived)
+        .map((item) => ({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: item.name,
+            url: item.url,
+            description: item.description,
+            applicationCategory: "WebApplication",
+            operatingSystem: "All",
+            offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "JPY",
+            },
+            ...(item.featureList && { featureList: item.featureList.join(", ") }),
+            author: {
+                "@type": "Person",
+                name: "寺島和宏",
+                alternateName: ["terashima kazuhiro", "howlrs"],
+                url: BASE_URL,
+            },
+        }));
 
     return (
         <>

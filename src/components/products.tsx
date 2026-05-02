@@ -16,6 +16,7 @@ import antoki from '../../public/images/mbti.png';
 import storesqr from '../../public/images/stores-qr.png';
 import lottery from '../../public/images/lottery.png';
 import claudechecker from '../../public/images/claude-checker.png';
+import genericcamera from '../../public/images/generic-camera.png';
 
 export const ProductsList = () => {
     const items: Item[] = [
@@ -138,6 +139,13 @@ export const ProductsList = () => {
             image: claudechecker,
             icon_url: '/icons/claude-checker.svg',
             description: 'WSL/Linux で動く Claude Code の進捗をブラウザのローカルかんばんでリアルタイム監視する Rust 製シングルバイナリです。並列セッションの状態 (needs_permission / running / waiting_for_user / idle) と TODO を一覧でき、人間の応答が必要なセッションをタブ通知で知らせます。'
+        },
+        {
+            name: 'Generic Camera | カメラで撮るだけの汎用判定 PWA',
+            url: 'https://generic-camera-pwa-staging-giyklvtu5q-an.a.run.app/?code=DEMO2026&demo=true',
+            image: genericcamera,
+            icon_url: '/icons/generic-camera.png',
+            description: 'カメラで撮影した画像を Gemini に流し、ドメイン定義 YAML 1 枚で判定対象を切り替えられる汎用 PWA です。汎用判定・魚種判定・みかん成熟度判定の 3 ドメインを同梱し、アクセスコード方式で営業デモから現場運用までを 1 つの URL で完結させます。'
         },
     ];
 

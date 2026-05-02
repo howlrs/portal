@@ -119,6 +119,12 @@ export const productLinks: ProductLink[] = [
         tagline: 'Claude Code セッションかんばん監視ツール',
         externalUrl: 'https://github.com/howlrs/claude-checker',
     },
+    {
+        articleSlug: 'generic-camera',
+        productName: 'Generic Camera',
+        tagline: 'カメラで撮るだけの汎用判定 PWA',
+        externalUrl: 'https://generic-camera-pwa-staging-giyklvtu5q-an.a.run.app/?code=DEMO2026&demo=true',
+    },
 ];
 
 export function getProductByArticleSlug(slug: string): ProductLink | undefined {

@@ -126,4 +126,11 @@ export const productItems: Omit<Item, 'image'>[] = [
         description: 'WSL/Linux で動く Claude Code の進捗をブラウザのローカルかんばんでリアルタイム監視する Rust 製シングルバイナリです。並列セッションの状態 (needs_permission / running / waiting_for_user / idle) と TODO を一覧でき、人間の応答が必要なセッションをタブ通知で知らせます。',
         featureList: ['Claude Code セッション監視', 'リアルタイム SSE 更新', 'TODO/DOING/DONE かんばん', 'タブ・favicon 通知', 'シングルバイナリ (Rust + axum)'],
     },
+    {
+        name: 'Generic Camera | カメラで撮るだけの汎用判定 PWA',
+        url: 'https://generic-camera-pwa-staging-giyklvtu5q-an.a.run.app/?code=DEMO2026&demo=true',
+        icon_url: '/icons/generic-camera.png',
+        description: 'カメラで撮影した画像を Gemini に流し、ドメイン定義 YAML 1 枚で判定対象を切り替えられる汎用 PWA です。汎用判定・魚種判定・みかん成熟度判定の 3 ドメインを同梱し、アクセスコード方式で営業デモから現場運用までを 1 つの URL で完結させます。',
+        featureList: ['カメラ撮影 → AI 判定', 'ドメイン切替 (YAML 定義)', 'アクセスコード方式', 'デモモード (オフライン保険)', 'Rust + axum API + Cloud Run'],
+    },
 ];

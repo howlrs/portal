@@ -125,6 +125,12 @@ export const productLinks: ProductLink[] = [
         tagline: 'カメラで撮るだけの汎用判定 PWA',
         externalUrl: 'https://generic-camera-pwa-staging-giyklvtu5q-an.a.run.app/?code=DEMO2026&demo=true',
     },
+    {
+        articleSlug: 'hyakunin-isshu',
+        productName: '百人一首暗記',
+        tagline: '情景を味わいながら 100 首を覚える Web アプリ',
+        externalUrl: 'https://hyakunin.howlrs.net/',
+    },
 ];
 
 export function getProductByArticleSlug(slug: string): ProductLink | undefined {

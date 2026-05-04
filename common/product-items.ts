@@ -133,4 +133,11 @@ export const productItems: Omit<Item, 'image'>[] = [
         description: 'カメラで撮影した画像を Gemini に流し、ドメイン定義 YAML 1 枚で判定対象を切り替えられる汎用 PWA です。汎用判定・魚種判定・みかん成熟度判定の 3 ドメインを同梱し、アクセスコード方式で営業デモから現場運用までを 1 つの URL で完結させます。',
         featureList: ['カメラ撮影 → AI 判定', 'ドメイン切替 (YAML 定義)', 'アクセスコード方式', 'デモモード (オフライン保険)', 'Rust + axum API + Cloud Run'],
     },
+    {
+        name: '百人一首暗記 | 情景を味わいながら 100 首を覚える',
+        url: 'https://hyakunin.howlrs.net/',
+        icon_url: '/icons/hyakunin-isshu.png',
+        description: '百人一首 100 首を読み物として味わいながら覚える Web アプリです。Gemini で生成した各句固有の情景イラスト、4 軸 (作者・テーマ・決まり字・時代) の関連リンク、ランダム 10 問のクイズチャレンジで、暗記と理解を同時に深めます。Next.js + Cloudflare Pages の静的配信で爆速、無料・登録不要。',
+        featureList: ['情景イラスト 100 枚 (Gemini 生成)', '4 軸関連リンクで回遊', 'ランダム 10 問クイズ', '縦書き表示・ひらがなルビ', 'Next.js + Cloudflare Pages 静的配信'],
+    },
 ];

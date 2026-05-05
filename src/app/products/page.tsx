@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ProductsList } from "@/components/products";
 import { productItems } from "../../../common/product-items";
+import { sortByFeatured } from "../../../common/featured-order";
 import { BreadcrumbJsonLd, JsonLd } from "@/components/json-ld";
 
 const BASE_URL =
@@ -14,7 +15,8 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    const softwareJsonLd = productItems
+    // JSON-LD でも 5 プロダクトを先頭にして検索エンジンへの強調度を上げる
+    const softwareJsonLd = sortByFeatured(productItems)
         .filter((item) => !item.archived)
         .map((item) => ({
             "@context": "https://schema.org",

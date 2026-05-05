@@ -23,6 +23,58 @@
     width: 100%;
 }
 
+/* Featured セクション (上部固定 5 件) */
+.featuredSection {
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.featuredHeading {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 0.6rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* Gemini Pro 指摘:
+   - 透過度 4-6% は薄すぎ → 12% (light) / 15% (dark) に
+   - border-left は不透明色で確実なコントラスト */
+.featuredItem {
+    background: rgba(255, 204, 0, 0.12);
+    border-left: 3px solid #ffcc00;
+}
+
+.featuredItem .link {
+    padding-left: 0.9rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .featuredItem {
+        background: rgba(255, 204, 0, 0.15);
+    }
+}
+
+.divider {
+    margin: 0.5rem 0 1rem;
+    padding: 0;
+    border: none;
+    height: 1px;
+    background: var(--gray-alpha-200, rgba(0, 0, 0, 0.1));
+    width: 100%;
+}
+
+.allHeading {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
 .item {
     border-top: 1px solid var(--gray-alpha-200, rgba(0, 0, 0, 0.1));
 }

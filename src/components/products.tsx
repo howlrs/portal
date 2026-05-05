@@ -1,4 +1,5 @@
 import { Products, Item } from '../../common/products';
+import { sortByFeatured } from '../../common/featured-order';
 import n_delete from '../../public/images/n_delete.png';
 import factorizer from '../../public/images/factorizer.png';
 import jlpt from '../../public/images/jlpt.png';
@@ -165,7 +166,9 @@ export const ProductsList = () => {
         },
     ];
 
+    // 5 プロダクト (ピクセルズ / 百人一首 / Orbit Bola / ANTOKI / Generic Camera) を先頭固定、
+    // 残りは元順を維持して並び替え (回遊率向上のため上部露出)
     return (
-        <Products items={items} />
+        <Products items={sortByFeatured(items)} />
     );
 };

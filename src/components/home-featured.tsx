@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import Image, { type StaticImageData } from 'next/image';
 import styles from './home-featured.module.css';
+import pixels from '../../public/images/pixels.png';
+import hyakuninisshu from '../../public/images/hyakunin-isshu.png';
 import orbitbola from '../../public/images/orbit-bola.png';
 import antoki from '../../public/images/mbti.png';
-import storesqr from '../../public/images/stores-qr.png';
+import genericcamera from '../../public/images/generic-camera.png';
 
 type Featured = {
     name: string;
@@ -14,7 +16,26 @@ type Featured = {
     externalUrl: string;
 };
 
-const featured: Featured[] = [
+// HOME / products / articles の 3 箇所で同一順 (回遊率向上のため 5 件を上部に固定)
+export const FEATURED_PRODUCTS: Featured[] = [
+    {
+        name: 'ピクセルズ',
+        tagline: 'Web ノノグラム / ピクチャーロジック',
+        description:
+            '5×5〜25×25 の 21 パズルすべてが「論理だけで解ける + 一意解」を CI で強制保証。Undo/Redo、ズーム+パン、WebAudio 自前合成 BGM、PWA でオフライン対応。広告・課金・登録ゼロ。',
+        image: pixels,
+        articleSlug: 'pixels',
+        externalUrl: 'https://pixels.howlrs.net/',
+    },
+    {
+        name: '百人一首暗記',
+        tagline: '情景を味わいながら 100 首を覚える',
+        description:
+            '百人一首 100 首を読み物として味わいながら覚える Web アプリ。Gemini で生成した各句固有の情景イラスト、4 軸 (作者・テーマ・決まり字・時代) の関連リンク、ランダム 10 問のクイズチャレンジ。',
+        image: hyakuninisshu,
+        articleSlug: 'hyakunin-isshu',
+        externalUrl: 'https://hyakunin.howlrs.net/',
+    },
     {
         name: 'Orbit Bola!!',
         tagline: '宇宙状況認識 (SSA) API',
@@ -34,13 +55,14 @@ const featured: Featured[] = [
         externalUrl: 'https://mbti.antoki.net/',
     },
     {
-        name: 'QRで管理',
-        tagline: '店舗管理 QR ソリューション',
+        name: 'Generic Camera',
+        tagline: 'カメラで撮るだけの汎用判定 PWA',
         description:
-            'QR コードで商品・在庫・注文を一元管理できる店舗向け Web サービス。複数バリエーション管理、試着リクエスト、モバイル商品閲覧に対応しています。',
-        image: storesqr,
-        articleSlug: 'stores-qr',
-        externalUrl: 'https://stores-qr.howlrs.net/',
+            'カメラで撮影した画像を Gemini に流し、ドメイン定義 YAML 1 枚で判定対象を切り替えられる汎用 PWA。汎用判定・魚種判定・みかん成熟度判定の 3 ドメインを同梱、アクセスコード方式で営業デモから現場運用まで完結します。',
+        image: genericcamera,
+        articleSlug: 'generic-camera',
+        externalUrl:
+            'https://generic-camera-pwa-staging-giyklvtu5q-an.a.run.app/?code=DEMO2026&demo=true',
     },
 ];
 
@@ -54,7 +76,7 @@ export default function HomeFeatured() {
                 </Link>
             </header>
             <div className={styles.grid}>
-                {featured.map((item) => (
+                {FEATURED_PRODUCTS.map((item) => (
                     <article key={item.name} className={styles.card}>
                         <Link href={`/articles/${item.articleSlug}`} className={styles.cover} aria-label={`${item.name} の紹介記事へ`}>
                             <Image

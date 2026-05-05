@@ -140,4 +140,11 @@ export const productItems: Omit<Item, 'image'>[] = [
         description: '百人一首 100 首を読み物として味わいながら覚える Web アプリです。Gemini で生成した各句固有の情景イラスト、4 軸 (作者・テーマ・決まり字・時代) の関連リンク、ランダム 10 問のクイズチャレンジで、暗記と理解を同時に深めます。Next.js + Cloudflare Pages の静的配信で爆速、無料・登録不要。',
         featureList: ['情景イラスト 100 枚 (Gemini 生成)', '4 軸関連リンクで回遊', 'ランダム 10 問クイズ', '縦書き表示・ひらがなルビ', 'Next.js + Cloudflare Pages 静的配信'],
     },
+    {
+        name: 'ピクセルズ | Web で遊ぶ集中向けノノグラム',
+        url: 'https://pixels.howlrs.net/',
+        icon_url: '/icons/pixels.svg',
+        description: '行と列のヒント数字から塗るマスを論理だけで導く「ノノグラム / ピクチャーロジック」を Web で遊べる無料アプリです。5×5〜25×25 の 21 パズルすべてが no-guess + 一意解 (CI で強制保証)、Undo/Redo、25×25 用ズーム+パン UI、WebAudio 自前合成 BGM、PWA でオフライン対応。広告・課金・登録すべてゼロ。',
+        featureList: ['no-guess + 一意解 を CI 強制', '5×5〜25×25 / 21 パズル', 'Undo / Redo (履歴 100 件 + LocalStorage 永続)', 'ズーム+パン UI (ピンチ / ホイール / トラックパッド)', 'WebAudio 自前合成 BGM (bundle 0 KB)', 'PWA + オフライン対応', 'Pixi.js v8 / React 19 / Zustand / Cloudflare Pages'],
+    },
 ];

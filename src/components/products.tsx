@@ -18,6 +18,7 @@ import lottery from '../../public/images/lottery.png';
 import claudechecker from '../../public/images/claude-checker.png';
 import genericcamera from '../../public/images/generic-camera.png';
 import hyakuninisshu from '../../public/images/hyakunin-isshu.png';
+import pixels from '../../public/images/pixels.png';
 
 export const ProductsList = () => {
     const items: Item[] = [
@@ -154,6 +155,13 @@ export const ProductsList = () => {
             image: hyakuninisshu,
             icon_url: '/icons/hyakunin-isshu.png',
             description: '百人一首 100 首を読み物として味わいながら覚える Web アプリです。Gemini で生成した各句固有の情景イラスト、4 軸 (作者・テーマ・決まり字・時代) の関連リンク、ランダム 10 問のクイズチャレンジで、暗記と理解を同時に深めます。Next.js + Cloudflare Pages の静的配信で爆速、無料・登録不要。'
+        },
+        {
+            name: 'ピクセルズ | Web で遊ぶ集中向けノノグラム',
+            url: 'https://pixels.howlrs.net/',
+            image: pixels,
+            icon_url: '/icons/pixels.svg',
+            description: '行と列のヒント数字から塗るマスを論理だけで導く「ノノグラム / ピクチャーロジック」を Web で遊べる無料アプリです。5×5〜25×25 の 21 パズルすべてが no-guess + 一意解 (CI で強制保証)、Undo/Redo、25×25 用ズーム+パン UI、WebAudio 自前合成 BGM、PWA でオフライン対応。広告・課金・登録すべてゼロ。'
         },
     ];
 

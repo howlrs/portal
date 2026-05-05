@@ -131,6 +131,12 @@ export const productLinks: ProductLink[] = [
         tagline: '情景を味わいながら 100 首を覚える Web アプリ',
         externalUrl: 'https://hyakunin.howlrs.net/',
     },
+    {
+        articleSlug: 'pixels',
+        productName: 'ピクセルズ',
+        tagline: 'Web で遊ぶ集中向けノノグラム (ピクチャーロジック)',
+        externalUrl: 'https://pixels.howlrs.net/',
+    },
 ];
 
 export function getProductByArticleSlug(slug: string): ProductLink | undefined {

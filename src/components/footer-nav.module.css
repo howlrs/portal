@@ -72,3 +72,41 @@
     opacity: 0.55;
     text-decoration: line-through;
 }
+
+.legalNav {
+    border-top: 1px solid var(--gray-alpha-200, rgba(255, 255, 255, 0.08));
+    padding-top: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.legalList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+}
+
+.legalLink {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.15s ease;
+}
+
+.legalLink:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: 1;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.75rem;
+    opacity: 0.55;
+    padding: 0.5rem 0 0.25rem;
+    letter-spacing: 0.02em;
+}

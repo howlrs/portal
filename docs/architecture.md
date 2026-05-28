@@ -38,7 +38,7 @@ articles/*.md ──(gray-matter)──> frontmatter + content
 
 common/products.tsx ──> src/components/products.tsx ──> カード表示
 
-Contact Form ──(axios POST)──> NEXT_PUBLIC_API_DOMAIN 外部API
+Contact Form ──(axios POST)──> /api/contact ──> Discord Webhook
 ```
 
 ## コンポーネント構成
@@ -68,7 +68,7 @@ layout.tsx
 | `NEXT_PUBLIC_BASE_URL` | ベースURL (サイトマップ用) |
 | `NEXT_PUBLIC_USERNAME` | 表示名 |
 | `NEXT_PUBLIC_EMAIL` | メールアドレス |
-| `NEXT_PUBLIC_API_DOMAIN` | お問い合わせAPI |
+| `DISCORD_WEBHOOK_URL` | お問い合わせ通知先 Discord Webhook |
 
 ### 法的情報 (policy ページ)
 

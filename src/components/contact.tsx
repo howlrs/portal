@@ -44,11 +44,9 @@ export const Contact = () => {
                 throw new Error('必要な情報が入力されていません');
             }
 
-            const domain = `${process.env.NEXT_PUBLIC_API_DOMAIN}`;
-            const path = domain + '/contact';
             value.from = 'portal';
 
-            const result = await axios.post(path, value);
+            const result = await axios.post('/api/contact', value);
 
             if (result.data.code !== 200) {
                 throw new Error('送信に失敗しました');
@@ -136,4 +134,3 @@ export const Contact = () => {
         </>
     );
 };
-

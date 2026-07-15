@@ -147,4 +147,11 @@ export const productItems: Omit<Item, 'image'>[] = [
         description: '行と列のヒント数字から塗るマスを論理だけで導く「ノノグラム / ピクチャーロジック」を Web で遊べる無料アプリです。5×5〜25×25 の 21 パズルすべてが no-guess + 一意解 (CI で強制保証)、Undo/Redo、25×25 用ズーム+パン UI、WebAudio 自前合成 BGM、PWA でオフライン対応。広告・課金・登録すべてゼロ。',
         featureList: ['no-guess + 一意解 を CI 強制', '5×5〜25×25 / 21 パズル', 'Undo / Redo (履歴 100 件 + LocalStorage 永続)', 'ズーム+パン UI (ピンチ / ホイール / トラックパッド)', 'WebAudio 自前合成 BGM (bundle 0 KB)', 'PWA + オフライン対応', 'Pixi.js v8 / React 19 / Zustand / Cloudflare Pages'],
     },
+    {
+        name: 'SynapseGit | 創作の意図と判断を残す Git-like Core',
+        url: 'https://github.com/howlrs/synapsegit',
+        icon_url: '/images/synapsegit.png',
+        description: '創作物の最終ファイルだけでは失われやすい意図、証拠、観測、解釈、AI 提案、人間の判断を、異なる意味の記録として保存する Rust 製 Git-like Core です。厳密な canonical JSON と OID、Ref の compare-and-swap、再構築可能な SQLite Projection、単一クリエイター向けのローカル viewer を実装しています。',
+        featureList: ['意図・観測・解釈・判断を分離した immutable Record', 'canonical JSON / domain-separated OID', 'Ref compare-and-swap / reflog / fsck', 'Creative AI proposal と Human Decision の admission', 'SQLite Projection と lineage 検証', '127.0.0.1 固定の read-only local viewer'],
+    },
 ];

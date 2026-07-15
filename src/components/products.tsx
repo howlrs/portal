@@ -20,6 +20,7 @@ import claudechecker from '../../public/images/claude-checker.png';
 import genericcamera from '../../public/images/generic-camera.png';
 import hyakuninisshu from '../../public/images/hyakunin-isshu.png';
 import pixels from '../../public/images/pixels.png';
+import synapsegit from '../../public/images/synapsegit.png';
 
 export const ProductsList = () => {
     const items: Item[] = [
@@ -163,6 +164,13 @@ export const ProductsList = () => {
             image: pixels,
             icon_url: '/icons/pixels.svg',
             description: '行と列のヒント数字から塗るマスを論理だけで導く「ノノグラム / ピクチャーロジック」を Web で遊べる無料アプリです。5×5〜25×25 の 21 パズルすべてが no-guess + 一意解 (CI で強制保証)、Undo/Redo、25×25 用ズーム+パン UI、WebAudio 自前合成 BGM、PWA でオフライン対応。広告・課金・登録すべてゼロ。'
+        },
+        {
+            name: 'SynapseGit | 創作の意図と判断を残す Git-like Core',
+            url: 'https://github.com/howlrs/synapsegit',
+            image: synapsegit,
+            icon_url: '/images/synapsegit.png',
+            description: '創作物の最終ファイルだけでは失われやすい意図、証拠、観測、解釈、AI 提案、人間の判断を、異なる意味の記録として保存する Rust 製 Git-like Core です。厳密な canonical JSON と OID、Ref の compare-and-swap、再構築可能な SQLite Projection、単一クリエイター向けのローカル viewer を実装しています。'
         },
     ];
 

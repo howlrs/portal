@@ -137,6 +137,12 @@ export const productLinks: ProductLink[] = [
         tagline: 'Web で遊ぶ集中向けノノグラム (ピクチャーロジック)',
         externalUrl: 'https://pixels.howlrs.net/',
     },
+    {
+        articleSlug: 'synapsegit',
+        productName: 'SynapseGit',
+        tagline: '創作の意図・証拠・判断を保存する Git-like Core',
+        externalUrl: 'https://github.com/howlrs/synapsegit',
+    },
 ];
 
 export function getProductByArticleSlug(slug: string): ProductLink | undefined {

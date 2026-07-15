@@ -6,6 +6,7 @@ import hyakuninisshu from '../../public/images/hyakunin-isshu.png';
 import orbitbola from '../../public/images/orbit-bola.png';
 import antoki from '../../public/images/mbti.png';
 import genericcamera from '../../public/images/generic-camera.png';
+import synapsegit from '../../public/images/synapsegit.png';
 
 type Featured = {
     name: string;
@@ -16,8 +17,17 @@ type Featured = {
     externalUrl: string;
 };
 
-// HOME / products / articles の 3 箇所で同一順 (回遊率向上のため 5 件を上部に固定)
+// HOME / products / articles の 3 箇所で同一順 (回遊率向上のため 6 件を上部に固定)
 export const FEATURED_PRODUCTS: Featured[] = [
+    {
+        name: 'SynapseGit',
+        tagline: 'AIと人間の共創で「なぜこの形になったか」を残す',
+        description:
+            '完成物だけでは失われる意図、証拠、AI の提案、人間の判断を分けて保存する Git-like Core。次の担当者や未来の自分が、創作の背景から引き継げるようにします。',
+        image: synapsegit,
+        articleSlug: 'synapsegit',
+        externalUrl: 'https://github.com/howlrs/synapsegit',
+    },
     {
         name: 'ピクセルズ',
         tagline: 'Web ノノグラム / ピクチャーロジック',

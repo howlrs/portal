@@ -14,7 +14,7 @@
 .case { overflow: hidden; border: 1px solid #dce5e1; border-radius: 20px; background: #fff; box-shadow: 0 12px 40px rgba(29, 61, 49, .08); }
 .caseHeader { padding: 1.6rem 1.7rem 1rem; }
 .client { color: #167c5a; font-weight: 700; }
-.caseTitle { margin: .45rem 0 .8rem; font-size: clamp(1.4rem, 3vw, 2.2rem); }
+.caseTitle { margin: .45rem 0 .8rem; color: #173d32; font-size: clamp(1.4rem, 3vw, 2.2rem); }
 .summary { color: #56615e; line-height: 1.8; }
 .body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .8fr); gap: 1.5rem; padding: 0 1.7rem 1.7rem; }
 .details { display: grid; gap: 1.1rem; }

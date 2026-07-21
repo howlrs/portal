@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { type FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./confidence.module.css";
 
@@ -9,6 +9,30 @@ export default function ConfidenceUnlock() {
   const [token, setToken] = useState("");
   const [error, setError] = useState("");
   const [pending, setPending] = useState(false);
+
+  useEffect(() => {
+    const queryToken = new URLSearchParams(window.location.search).get("token");
+    if (!queryToken) return;
+
+    // Remove the token from the visible URL and browser history immediately.
+    window.history.replaceState({}, "", window.location.pathname);
+    setPending(true);
+    void fetch("/api/confidence/unlock", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token: queryToken }),
+    }).then((response) => {
+      if (response.ok) {
+        router.refresh();
+      } else {
+        setError("招待URLのトークンが正しくありません。");
+        setPending(false);
+      }
+    }).catch(() => {
+      setError("認証に失敗しました。もう一度お試しください。");
+      setPending(false);
+    });
+  }, [router]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

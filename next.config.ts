@@ -6,6 +6,12 @@ const nextConfig: NextConfig = {
   compress: true,
   generateEtags: true,
 
+  // Confidence media stays outside `public` and is served only through the
+  // authenticated route handler. Include it in Vercel's traced output.
+  outputFileTracingIncludes: {
+    "/*": ["./private/confidence/**/*"],
+  },
+
   images: {
     formats: ["image/avif", "image/webp"],
   },

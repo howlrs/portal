@@ -1,0 +1,30 @@
+.page { max-width: 1180px; margin: 0 auto; padding: 3rem 0 5rem; }
+.intro { max-width: 760px; margin-bottom: 2.5rem; }
+.eyebrow { color: #51786a; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.title { margin: .7rem 0 1rem; font-size: clamp(2rem, 5vw, 4rem); line-height: 1.08; letter-spacing: -.04em; }
+.lead { color: #56615e; font-size: 1.08rem; line-height: 1.9; }
+.unlock { max-width: 600px; padding: 1.25rem; border: 1px solid #d8e3de; border-radius: 16px; background: #f5faf7; }
+.unlock label { display: block; margin-bottom: .55rem; font-weight: 700; }
+.unlockRow { display: flex; gap: .6rem; }
+.unlock input { min-width: 0; flex: 1; border: 1px solid #bccbc4; border-radius: 9px; padding: .7rem .8rem; font: inherit; background: white; }
+.unlock button { border: 0; border-radius: 9px; padding: .7rem 1rem; color: white; background: #167c5a; font-weight: 700; cursor: pointer; }
+.unlock button:disabled { opacity: .6; cursor: wait; }
+.error { margin-top: .6rem; color: #b42318; font-size: .9rem; }
+.cases { display: grid; gap: 2rem; }
+.case { overflow: hidden; border: 1px solid #dce5e1; border-radius: 20px; background: #fff; box-shadow: 0 12px 40px rgba(29, 61, 49, .08); }
+.caseHeader { padding: 1.6rem 1.7rem 1rem; }
+.client { color: #167c5a; font-weight: 700; }
+.caseTitle { margin: .45rem 0 .8rem; font-size: clamp(1.4rem, 3vw, 2.2rem); }
+.summary { color: #56615e; line-height: 1.8; }
+.body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .8fr); gap: 1.5rem; padding: 0 1.7rem 1.7rem; }
+.details { display: grid; gap: 1.1rem; }
+.details h3 { margin-bottom: .4rem; font-size: .9rem; color: #29453a; }
+.details ul { padding-left: 1.1rem; color: #4f5d57; line-height: 1.7; }
+.tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+.tag { padding: .35rem .65rem; border-radius: 999px; background: #edf5f1; color: #326252; font-size: .82rem; }
+.mediaGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; align-content: start; }
+.media { overflow: hidden; border: 1px solid #e0e8e4; border-radius: 12px; background: #f5f7f6; }
+.media img, .media video { display: block; width: 100%; height: auto; max-height: 360px; object-fit: contain; background: #eef2f0; }
+.media figcaption { padding: .5rem .65rem; color: #66716d; font-size: .76rem; line-height: 1.4; }
+.lockedNote { padding: 1.2rem; border-radius: 14px; background: #f7f9f8; color: #66716d; line-height: 1.7; }
+@media (max-width: 760px) { .page { padding: 2rem 0 4rem; } .unlockRow, .body { display: flex; flex-direction: column; } .unlock button { width: 100%; } .mediaGrid { grid-template-columns: 1fr; } }

@@ -3,7 +3,7 @@
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 
-import { HomeOutlined, AppstoreOutlined, MailOutlined, SolutionOutlined, ReadOutlined } from '@ant-design/icons';
+import { HomeOutlined, AppstoreOutlined, MailOutlined, SolutionOutlined, ReadOutlined, SafetyCertificateOutlined } from '@ant-design/icons';
 import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 
@@ -27,6 +27,11 @@ export default function HeaderNav() {
             label: 'Articles',
             key: 'articles',
             icon: <ReadOutlined />,
+        },
+        {
+            label: 'Confidence',
+            key: 'confidence',
+            icon: <SafetyCertificateOutlined />,
         },
         {
             label: 'Privacy&Policy',

@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+### Confidence deployment
+
+Import the `howlrs/portal` GitHub repository into Vercel and use `master` as
+the production branch. Set this Production environment variable before the
+first deployment:
+
+```env
+CONFIDENCE_ACCESS_TOKEN=<sales-token>
+```
+
+Protected Confidence images and video are stored under `private/confidence`,
+included in Vercel's traced serverless output, and served only through the
+authenticated media route. They are not exposed as `public/*` files.
